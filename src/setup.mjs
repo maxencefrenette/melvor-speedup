@@ -9,6 +9,6 @@ export function setup(ctx) {
 
     ctx.patch(Game, 'runTicks').before(function (ticksToRun) {
         const speedupFactor = ctx.settings.section('General').get('speedupFactor');
-        return [speedupFactor: ticksToRun];
+        return [speedupFactor * ticksToRun];
     });
 }
